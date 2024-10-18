@@ -1,17 +1,8 @@
+       
 function sortByDescendingFriendCount(users) {
-    for (let i = 0; i < users.length; i++) {
-        for (let j = i + 1; j < users.length; j++) {
-            if (users[i].friends.length < users[j].friends.length) {
-                let temp = users[i];
-                users[i] = users[j];
-                users[j] = temp;
-            }
-        }
-    }
-    return users;
+    return users.sort((a, b) => b.friends.length - a.friends.length);
 }
-
-const Users = [
+const Users1 = [
     {
         name: "Moore Hensley",
         friends: ["Sharron Pace"],
@@ -48,4 +39,4 @@ const Users = [
         gender: "female",
     }
 ];
-console.log(sortByDescendingFriendCount(Users));
+console.log(sortByDescendingFriendCount(Users1));
